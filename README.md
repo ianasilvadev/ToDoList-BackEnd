@@ -86,12 +86,31 @@ docker-compose up
 
 * Descrição: Retorna uma lista de todas as tarefas criadas e armazenadas no banco de dados. A funcionalidade é útil para exibir todas as tarefas no front-end, permitindo aos usuários visualizar o progresso e suas tarefas pendentes.
 
+* Exemplo de resposta:
+  
+[
+  {
+   "id": 1,
+    "titulo": "Nova Tarefa",
+    "descricao": "Descrição da nova tarefa",
+    "status": "Pendente"
+  },
+  {
+    "id": 2,
+    "titulo": "Outra Tarefa",
+    "descricao": "Descrição de outra tarefa",
+    "status": "Concluída"
+  }
+]
+  
 
 **3. Obter tarefa específica (por título):**
 
-* Endpoint: **GET /v1/tarefas/buscar**
+* Endpoint: **GET /v1/tarefas/buscar?**
 
 * Descrição: Permite ao usuário buscar uma tarefa específica pelo título. Se a tarefa for encontrada, ela é retornada como um objeto JSON e no Front-end, retorna como um Card de tarefa encontrado. Caso contrário, será lançada uma exceção informando que a tarefa não foi encontrada.
+
+* Exemplo: http://localhost:8080/v1/tarefas/buscar?titulo=tarefa
 
 
 **4. Deletar Tarefa (Endpoint adicional):**
